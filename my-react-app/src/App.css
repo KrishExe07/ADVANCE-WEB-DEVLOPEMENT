@@ -1,0 +1,370 @@
+:root {
+  --theme-color: #2563eb;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 30%),
+    linear-gradient(180deg, #f8fbff 0%, #eef4ff 38%, #f7f9fc 100%);
+}
+
+.portfolio-page {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 96px 0 40px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 16px 0;
+  backdrop-filter: blur(18px);
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #0f172a;
+}
+
+.topbar__brand p,
+.topbar__brand strong {
+  margin: 0;
+}
+
+.topbar__brand p {
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.topbar__mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--theme-color), #0f172a);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.24);
+}
+
+.topbar__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.topbar__nav a {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.topbar__nav a:hover,
+.topbar__nav a.is-active {
+  background: rgba(37, 99, 235, 0.12);
+  color: #0f172a;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+.content-section,
+.hero-section {
+  scroll-margin-top: 110px;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.8fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 24px;
+}
+
+.hero-copy,
+.hero-card,
+.info-card,
+.about-panel,
+.project-card,
+.footer-card {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+}
+
+.hero-copy {
+  padding: 40px;
+}
+
+.section-kicker {
+  margin: 0 0 12px;
+  color: var(--theme-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1,
+.section-heading h2 {
+  margin: 0;
+  color: #0f172a;
+  line-height: 1.05;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.6rem, 5vw, 4.6rem);
+}
+
+.hero-subtitle {
+  margin: 14px 0 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.hero-description {
+  margin: 18px 0 0;
+  max-width: 58ch;
+  color: #475569;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.hero-badges span,
+.skill-pill {
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.hero-badges span {
+  padding: 10px 14px;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  padding: 34px;
+  display: grid;
+  align-content: center;
+  gap: 14px;
+}
+
+.hero-card__accent {
+  position: absolute;
+  inset: auto -30px -30px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.22), rgba(37, 99, 235, 0));
+}
+
+.hero-card__label,
+.project-card__index,
+.project-meta span {
+  margin: 0;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.hero-card strong {
+  font-size: 1.6rem;
+  color: #0f172a;
+}
+
+.hero-card dl {
+  margin: 8px 0 0;
+  display: grid;
+  gap: 14px;
+}
+
+.hero-card dt,
+.info-card h3,
+.about-panel h3,
+.project-card h3,
+.footer-card strong {
+  color: #0f172a;
+}
+
+.hero-card dt,
+.hero-card dd {
+  margin: 0;
+}
+
+.hero-card dt {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.hero-card dd {
+  font-weight: 600;
+}
+
+.content-section {
+  margin-top: 24px;
+  padding: 32px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.info-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.info-card,
+.project-card {
+  padding: 22px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.info-card:hover,
+.project-card:hover,
+.footer-card:hover,
+.about-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px rgba(15, 23, 42, 0.12);
+}
+
+.info-card p,
+.about-panel p,
+.project-card p,
+.footer-card p {
+  margin: 10px 0 0;
+  color: #475569;
+  line-height: 1.75;
+}
+
+.about-panel {
+  margin-top: 18px;
+  padding: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-pill {
+  padding: 12px 16px;
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.project-card {
+  display: grid;
+  gap: 14px;
+}
+
+.project-meta {
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.project-meta strong {
+  display: block;
+  margin-top: 6px;
+  color: #1d4ed8;
+}
+
+.footer-card {
+  padding: 24px;
+}
+
+.footer-card a {
+  color: #1d4ed8;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-card a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 920px) {
+  .topbar,
+  .hero-section,
+  .info-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    position: static;
+    align-items: flex-start;
+  }
+
+  .topbar__nav {
+    justify-content: flex-start;
+  }
+
+  .hero-section {
+    gap: 18px;
+  }
+
+  .portfolio-page {
+    width: min(1120px, calc(100% - 20px));
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .topbar,
+  .portfolio-page {
+    width: min(1120px, calc(100% - 16px));
+  }
+
+  .hero-copy,
+  .hero-card,
+  .content-section {
+    padding: 22px;
+  }
+
+  .topbar__nav a {
+    padding: 9px 12px;
+  }
+}
