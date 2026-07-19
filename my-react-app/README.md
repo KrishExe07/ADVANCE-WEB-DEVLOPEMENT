@@ -1,16 +1,59 @@
-# React + Vite
+# Student Portfolio — Practical 2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React portfolio application for **ITE2001: Advanced Web Development Frameworks**, extended from Practical 1 with multi-page routing and state management.
 
-Currently, two official plugins are available:
+## Routes
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Path | Component | Description |
+| --- | --- | --- |
+| `/` | `Home` | Portfolio landing page with header, about, and skills |
+| `/projects` | `Projects` | Featured project cards |
+| `/contact` | `Contact` | Contact details with a controlled message form |
+| `*` | `NotFound` | Custom 404 page for undefined routes |
 
-## React Compiler
+## Features (Practical 2)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React Router v6** — `BrowserRouter` in `main.jsx`, routes defined in `App.jsx`
+- **Navigation bar** — `NavBar` uses `NavLink` for SPA navigation without page reloads
+- **State management (`useState`)**
+  - Dark/light theme toggle in `App.jsx` (applies `dark-mode` class to the root shell)
+  - Controlled message input on the Contact page
+  - Help tooltip visibility toggle on the Contact page
+- **Live character count** — displayed below the Contact form textarea
+- **404 route** — catch-all route renders `NotFound.jsx`
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Open the URL shown in the terminal (typically `http://localhost:5173`).
+
+## Scripts
+
+- `npm run dev` — start development server
+- `npm run build` — production build
+- `npm run preview` — preview production build
+- `npm run lint` — run ESLint
+
+## Project Structure
+
+```
+src/
+├── App.jsx              # Routes and theme state
+├── main.jsx             # BrowserRouter setup
+└── components/
+    ├── NavBar.jsx       # Navigation links and theme toggle
+    ├── Home.jsx         # Home route
+    ├── Projects.jsx     # Projects route
+    ├── Contact.jsx      # Contact route with controlled form
+    └── NotFound.jsx     # 404 route
+```
+
+## Student Details
+
+- **Name:** Krish Patel
+- **Enrollment No.:** 24IT068
+- **College:** CSPIT, CHARUSAT
