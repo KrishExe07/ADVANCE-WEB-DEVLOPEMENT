@@ -177,6 +177,7 @@ function TaskManager() {
   const [loading, setLoading]   = useState(true)
   const [error, setError]       = useState(null)
   const [apiOnline, setApiOnline] = useState(null)
+  const [fromCache, setFromCache] = useState(null) // null | true | false — Practical 9
   const [filter, setFilter]     = useState('all')
   const [modal, setModal]       = useState(null) // null | 'create' | task-object
 
@@ -191,6 +192,7 @@ function TaskManager() {
       .then((json) => {
         setApiOnline(true)
         setTasks(json.data)
+        setFromCache(json.fromCache ?? false) // Practical 9: track cache HIT/MISS
       })
       .catch((err) => {
         setApiOnline(false)
@@ -294,8 +296,8 @@ function TaskManager() {
       {/* Header */}
       <div className="tm-header">
         <div className="section-heading">
-          {/* Updated kicker: Practical 8 */}
-          <p className="section-kicker">Practical 8 · Performance Optimization</p>
+          {/* Updated kicker: Practical 9 */}
+          <p className="section-kicker">Practical 9 · In-Memory Caching</p>
           <h2>Task Manager</h2>
         </div>
         <div className="tm-header__right">
@@ -304,6 +306,14 @@ function TaskManager() {
             <span className={`tm-api-badge${apiOnline ? ' tm-api-badge--online' : ' tm-api-badge--offline'}`}>
               <span className="tm-api-badge__dot" />
               {apiOnline ? 'API Online' : 'API Offline'}
+            </span>
+          )}
+          {/* Practical 9: cache HIT / MISS badge */}
+          {fromCache !== null && (
+            <span className={`tm-api-badge${fromCache ? ' tm-api-badge--online' : ''}`}
+              title={fromCache ? 'Response served from in-memory cache (node-cache)' : 'Response fetched from MongoDB (cache miss)'}>
+              <span className="tm-api-badge__dot" />
+              {fromCache ? '⚡ Cache HIT' : '🗄 Cache MISS'}
             </span>
           )}
           <button
